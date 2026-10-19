@@ -9,7 +9,8 @@ class DockApp : Application() {
     private var pipeReady = false
     override fun onCreate() {
         super.onCreate()
-        androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES)
+        // The app uses an explicitly light glass theme; set it once before any Activity attaches.
+        androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO)
         androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat.forLanguageTags("en"))
         Diagnostics.install(this)
         org.streamdock.app.dl.DownloadCenter.init(this)

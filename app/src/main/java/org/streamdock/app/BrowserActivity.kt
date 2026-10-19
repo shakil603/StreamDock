@@ -95,7 +95,6 @@ class BrowserActivity : AppCompatActivity() {
     override fun attachBaseContext(newBase: android.content.Context) { super.attachBaseContext(FontFit.context(newBase)) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO)
         window.statusBarColor = android.graphics.Color.TRANSPARENT
         window.navigationBarColor = android.graphics.Color.argb(236,0xEA,0xF4,0xFC)
         if (Build.VERSION.SDK_INT >= 26) window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or
