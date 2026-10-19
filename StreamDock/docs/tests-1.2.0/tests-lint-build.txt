@@ -1,0 +1,65 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.11.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :newpipe-extractor:compileJava UP-TO-DATE
+> Task :newpipe-extractor:processResources NO-SOURCE
+> Task :newpipe-extractor:classes UP-TO-DATE
+> Task :newpipe-extractor:jar UP-TO-DATE
+> Task :newpipe-extractor:compileTestJava UP-TO-DATE
+> Task :newpipe-extractor:processTestResources NO-SOURCE
+> Task :newpipe-extractor:testClasses UP-TO-DATE
+> Task :newpipe-extractor:test UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+
+> Task :app:compileDebugKotlin
+w: file:///home/user/StreamDock/app/src/main/java/org/streamdock/app/BrowserActivity.kt:124:17 'var allowFileAccessFromFileURLs: Boolean' is deprecated. Deprecated in Java.
+w: file:///home/user/StreamDock/app/src/main/java/org/streamdock/app/BrowserActivity.kt:124:51 'var allowUniversalAccessFromFileURLs: Boolean' is deprecated. Deprecated in Java.
+w: file:///home/user/StreamDock/app/src/main/java/org/streamdock/app/BrowserActivity.kt:170:162 'static field FLAG_FULLSCREEN: Int' is deprecated. Deprecated in Java.
+w: file:///home/user/StreamDock/app/src/main/java/org/streamdock/app/BrowserActivity.kt:250:205 'static field FLAG_FULLSCREEN: Int' is deprecated. Deprecated in Java.
+w: file:///home/user/StreamDock/app/src/main/java/org/streamdock/app/ExtractorRepository.kt:44:33 'field resolution: String!' is deprecated. Deprecated in Java.
+w: file:///home/user/StreamDock/app/src/main/java/org/streamdock/app/ExtractorRepository.kt:46:33 'field resolution: String!' is deprecated. Deprecated in Java.
+w: file:///home/user/StreamDock/app/src/main/java/org/streamdock/app/NewPipeTransfer.kt:23:81 'field resolution: String!' is deprecated. Deprecated in Java.
+w: file:///home/user/StreamDock/app/src/main/java/org/streamdock/app/NewPipeTransfer.kt:24:53 'field isVideoOnly: Boolean' is deprecated. Deprecated in Java.
+
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac NO-SOURCE
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:compileDebugUnitTestKotlin UP-TO-DATE
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:processDebugUnitTestJavaRes UP-TO-DATE
+> Task :app:testDebugUnitTest
+> Task :app:preDebugAndroidTestBuild SKIPPED
+> Task :app:generateDebugAndroidTestResValues UP-TO-DATE
+> Task :app:generateDebugAndroidTestLintModel
+> Task :app:extractProguardFiles UP-TO-DATE
+> Task :app:generateDebugLintReportModel
+> Task :app:generateDebugUnitTestLintModel
+> Task :app:lintAnalyzeDebug
+> Task :app:lintAnalyzeDebugAndroidTest
+> Task :app:lintAnalyzeDebugUnitTest
+
+> Task :app:lintReportDebug
+Wrote HTML report to file:///home/user/StreamDock/app/build/reports/lint-results-debug.html
+
+> Task :app:lintDebug
+
+BUILD SUCCESSFUL in 1m 15s
+36 actionable tasks: 12 executed, 24 up-to-date

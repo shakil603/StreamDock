@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.streamdock.app.DirectHttpDownloaderTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-10-09T08:29:53" hostname="e2b.local" time="1.699">
+  <properties/>
+  <testcase name="rangesAreJoinedExactly" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.556"/>
+  <testcase name="changedResourceSizeRejected" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.193"/>
+  <testcase name="cancellationBetweenReadsDiscardsPartial" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.14"/>
+  <testcase name="ignoredContinuationCannotCorruptOutput" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.199"/>
+  <testcase name="cancellationStopsBeforeNetwork" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.018"/>
+  <testcase name="ignoredInitialRangeIsCompleteSingleResponse" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.137"/>
+  <testcase name="rateLimitIsNotRetried" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.081"/>
+  <testcase name="htmlIsNotSavedAsVideo" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.082"/>
+  <testcase name="forbiddenIsNotRetriedAndPartialFileRemoved" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.067"/>
+  <testcase name="shortRangeBodyRejected" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.107"/>
+  <testcase name="missingRangeRejected" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.116"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Oct 09, 2026 8:29:54 AM okhttp3.internal.platform.Platform log
+INFO: Http2Connection.Listener failure for MockWebServer localhost
+java.io.IOException: closed
+	at okhttp3.internal.http2.Http2Writer.flush(Http2Writer.kt:119)
+	at okhttp3.internal.http2.Http2Connection.flush(Http2Connection.kt:408)
+	at okhttp3.internal.http2.Http2Stream$FramingSink.close(Http2Stream.kt:624)
+	at okio.RealBufferedSink.close(RealBufferedSink.kt:287)
+	at kotlin.io.CloseableKt.closeFinally(Closeable.kt:46)
+	at okhttp3.mockwebserver.MockWebServer$Http2SocketHandler.writeResponse(MockWebServer.kt:1096)
+	at okhttp3.mockwebserver.MockWebServer$Http2SocketHandler.onStream(MockWebServer.kt:977)
+	at okhttp3.internal.http2.Http2Connection$ReaderRunnable$headers$lambda$2$$inlined$execute$default$1.runOnce(TaskQueue.kt:220)
+	at okhttp3.internal.concurrent.TaskRunner.runTask(TaskRunner.kt:116)
+	at okhttp3.internal.concurrent.TaskRunner.access$runTask(TaskRunner.kt:42)
+	at okhttp3.internal.concurrent.TaskRunner$runnable$1.run(TaskRunner.kt:65)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+]]></system-err>
+</testsuite>

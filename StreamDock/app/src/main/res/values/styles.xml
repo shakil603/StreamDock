@@ -1,0 +1,26 @@
+<resources>
+    <!-- Frozen Glass 1.6.0: pale surfaces, ice accent, dark system-bar icons. -->
+    <style name="Theme.StreamDock" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#188FD6</item>
+        <item name="colorPrimaryVariant">#0F6FA8</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#188FD6</item>
+        <item name="colorSurface">#F2F8FD</item>
+        <item name="colorOnSurface">#0C1620</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <item name="android:windowBackground">#E9F3FB</item>
+        <item name="android:navigationBarColor">#EAF4FC</item>
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:colorAccent">#188FD6</item>
+        <item name="android:alertDialogTheme">@style/Theme.StreamDock.Dialog</item>
+    </style>
+
+    <style name="Theme.StreamDock.Dialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="colorPrimary">#188FD6</item>
+        <item name="android:textColorPrimary">#0C1620</item>
+        <item name="android:windowBackground">#F6FAFE</item>
+    </style>
+</resources>

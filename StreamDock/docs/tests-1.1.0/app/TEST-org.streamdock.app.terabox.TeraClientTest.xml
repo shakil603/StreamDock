@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.streamdock.app.terabox.TeraClientTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2026-10-10T10:56:36" hostname="e2b.local" time="1.869">
+  <properties/>
+  <testcase name="captchaStopsWithoutSolverOrRetry" classname="org.streamdock.app.terabox.TeraClientTest" time="0.116"/>
+  <testcase name="officialAccountResolveWithoutPremiumOverride" classname="org.streamdock.app.terabox.TeraClientTest" time="0.08"/>
+  <testcase name="cookieNotLeakedOnCrossOriginMediaRedirect" classname="org.streamdock.app.terabox.TeraClientTest" time="0.196"/>
+  <testcase name="shareResolveUsesSelectedIdAndFreshLink" classname="org.streamdock.app.terabox.TeraClientTest" time="0.12"/>
+  <testcase name="maliciousRegionIsNotFollowed" classname="org.streamdock.app.terabox.TeraClientTest" time="0.115"/>
+  <testcase name="missingDlinkDoesNotFallbackOrFabricateUrl" classname="org.streamdock.app.terabox.TeraClientTest" time="0.122"/>
+  <testcase name="passwordIsPostBodyNotUrlAndVerificationCookieUsed" classname="org.streamdock.app.terabox.TeraClientTest" time="0.196"/>
+  <testcase name="htmlResponseNeverExposedWithEmbeddedCredentials" classname="org.streamdock.app.terabox.TeraClientTest" time="0.112"/>
+  <testcase name="malformedItemDoesNotExposeServerText" classname="org.streamdock.app.terabox.TeraClientTest" time="0.105"/>
+  <testcase name="publicListPreservesIdAndNoCookiesRequiredByApp" classname="org.streamdock.app.terabox.TeraClientTest" time="0.127"/>
+  <testcase name="rateLimitStopsImmediately" classname="org.streamdock.app.terabox.TeraClientTest" time="0.097"/>
+  <testcase name="accountRootAndNestedPage" classname="org.streamdock.app.terabox.TeraClientTest" time="0.161"/>
+  <testcase name="tokenRefreshOnlyOnceAndAndroidSafeDecoder" classname="org.streamdock.app.terabox.TeraClientTest" time="0.201"/>
+  <testcase name="unauthenticatedAccountNeverQueried" classname="org.streamdock.app.terabox.TeraClientTest" time="0.008"/>
+  <testcase name="malformedVerificationDoesNotExposeToken" classname="org.streamdock.app.terabox.TeraClientTest" time="0.098"/>
+  <testcase name="cancelledClientCannotStartAnotherAuthenticatedRequest" classname="org.streamdock.app.terabox.TeraClientTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

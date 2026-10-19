@@ -1,0 +1,60 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+android {
+    namespace 'org.streamdock.app'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'org.streamdock.app'
+        minSdk 24
+        targetSdk 35
+        versionCode 20
+        versionName '1.8.0'
+        ndk {
+            def requestedAbi = providers.gradleProperty('targetAbi').orNull
+            abiFilters.addAll(requestedAbi ? [requestedAbi] : ['arm64-v8a', 'armeabi-v7a', 'x86', 'x86_64'])
+        }
+    }
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions { jvmTarget = '17' }
+    packaging {
+        jniLibs { useLegacyPackaging = true }
+        resources { excludes += ['META-INF/DEPENDENCIES', 'META-INF/INDEX.LIST', 'META-INF/*.kotlin_module'] }
+    }
+    buildTypes { release { minifyEnabled false } }
+    testOptions {
+        unitTests.all {
+            systemProperty 'streamdock.liveUrl', providers.gradleProperty('liveUrl').getOrElse('')
+            systemProperty 'streamdock.liveDownload', providers.gradleProperty('liveDownload').getOrElse('false')
+            systemProperty 'streamdock.teraShare', providers.gradleProperty('teraShare').getOrElse('')
+        systemProperty 'streamdock.hlsStream', providers.gradleProperty('hlsStream').getOrElse('')
+        }
+    }
+}
+dependencies {
+    implementation project(':newpipe-extractor')
+    implementation 'io.github.junkfood02.youtubedl-android:library:0.18.1'
+    implementation 'io.github.junkfood02.youtubedl-android:ffmpeg:0.18.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'androidx.core:core-ktx:1.15.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.7'
+    implementation 'androidx.work:work-runtime-ktx:2.10.1'
+    implementation 'androidx.media3:media3-exoplayer:1.6.1'
+    implementation 'androidx.media3:media3-exoplayer-hls:1.6.1'
+    implementation 'androidx.media3:media3-exoplayer-dash:1.6.1'
+    implementation 'androidx.media3:media3-ui:1.6.1'
+    implementation 'androidx.media3:media3-session:1.6.1'
+    implementation 'androidx.browser:browser:1.8.0'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.json:json:20240303'
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.12.0'
+    testImplementation 'com.squareup.okhttp3:okhttp-tls:4.12.0'
+}

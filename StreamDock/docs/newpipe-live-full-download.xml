@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.streamdock.app.NewPipeLiveProbeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-10-09T08:28:48" hostname="e2b.local" time="18.934">
+  <properties/>
+  <testcase name="extractAndFetchStreamPrefix" classname="org.streamdock.app.NewPipeLiveProbeTest" time="18.934"/>
+  <system-out><![CDATA[NewPipe metadata resolved; 20 stream entries
+Prefix request HTTP 206; type=video/mp4
+Received stream prefix. Content-Range: bytes 0-65535/62662987
+FULL progressive video transfer complete via DirectHttpDownloader: 62662987 bytes; output=/home/user/StreamDock/app/build/live-probe/media.mp4
+Android UI / native FFmpeg merging not tested.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
