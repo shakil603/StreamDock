@@ -1,3 +1,5 @@
+@file:OptIn(androidx.media3.common.util.UnstableApi::class)
+
 package org.streamdock.app.player
 
 import android.app.Notification
@@ -14,7 +16,6 @@ import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.MediaMetadata
 import androidx.media3.common.Player
-import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.DefaultHttpDataSource
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
@@ -32,7 +33,6 @@ import org.streamdock.app.MainActivity
  * Separate video/audio streams are merged here, the same way the old inline
  * preview did, so every analyzed stream keeps playing.
  */
-@OptIn(UnstableApi::class)
 class PlaybackService : MediaSessionService() {
 
     companion object {

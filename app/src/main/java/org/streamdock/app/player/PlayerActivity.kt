@@ -1,3 +1,5 @@
+@file:OptIn(androidx.media3.common.util.UnstableApi::class)
+
 package org.streamdock.app.player
 
 import android.content.Context
@@ -28,7 +30,6 @@ import androidx.core.content.ContextCompat
 import androidx.media3.common.C
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
-import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
 import androidx.media3.ui.PlayerView
@@ -43,7 +44,6 @@ import org.streamdock.app.FontFit
  * the same queue to the audio track and keeps playing with a media notification
  * when the screen is off or the app is in the background.
  */
-@OptIn(UnstableApi::class)
 class PlayerActivity : AppCompatActivity() {
 
     companion object {
