@@ -21,7 +21,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-    kotlinOptions { jvmTarget = '17' }
+    kotlinOptions {
+        jvmTarget = '17'
+        // The unified player intentionally uses Media3 APIs still marked unstable in 1.6.1.
+        freeCompilerArgs += ['-opt-in=androidx.media3.common.util.UnstableApi']
+    }
     packaging {
         jniLibs { useLegacyPackaging = true }
         resources { excludes += ['META-INF/DEPENDENCIES', 'META-INF/INDEX.LIST', 'META-INF/*.kotlin_module'] }
