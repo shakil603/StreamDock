@@ -33,6 +33,7 @@ import org.streamdock.app.MainActivity
  * Separate video/audio streams are merged here, the same way the old inline
  * preview did, so every analyzed stream keeps playing.
  */
+@androidx.annotation.OptIn(markerClass = [androidx.media3.common.util.UnstableApi::class])
 class PlaybackService : MediaSessionService() {
 
     companion object {

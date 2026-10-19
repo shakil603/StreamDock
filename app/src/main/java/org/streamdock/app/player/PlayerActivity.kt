@@ -44,6 +44,7 @@ import org.streamdock.app.FontFit
  * the same queue to the audio track and keeps playing with a media notification
  * when the screen is off or the app is in the background.
  */
+@androidx.annotation.OptIn(markerClass = [androidx.media3.common.util.UnstableApi::class])
 class PlayerActivity : AppCompatActivity() {
 
     companion object {
