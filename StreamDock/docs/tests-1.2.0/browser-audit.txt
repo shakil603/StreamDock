@@ -1,0 +1,2 @@
+PASS: English app strings, retired TeraBox module, secure browser settings, no cookie export, permission scope and APK structure.
+LIMIT: static gates do not establish live websites, device UI, login, DownloadManager or storage-permission behavior.

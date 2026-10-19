@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.streamdock.app.PipeTrackSelectorTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-10T07:04:32" hostname="e2b.local" time="0.009">
+  <properties/>
+  <testcase name="sameResolutionPrefersMuxed" classname="org.streamdock.app.PipeTrackSelectorTest" time="0.004"/>
+  <testcase name="unknownHeightCannotViolateCap" classname="org.streamdock.app.PipeTrackSelectorTest" time="0.002"/>
+  <testcase name="m4aAvoidsUnnecessaryTranscode" classname="org.streamdock.app.PipeTrackSelectorTest" time="0.001"/>
+  <testcase name="noAudioNeverProducesSilentVideo" classname="org.streamdock.app.PipeTrackSelectorTest" time="0.0"/>
+  <testcase name="audioCanBeExtractedFromMuxedVideo" classname="org.streamdock.app.PipeTrackSelectorTest" time="0.0"/>
+  <testcase name="adaptiveVideoGetsSeparateAudio" classname="org.streamdock.app.PipeTrackSelectorTest" time="0.0"/>
+  <testcase name="onlySilentVideoCannotMakeAudio" classname="org.streamdock.app.PipeTrackSelectorTest" time="0.0"/>
+  <testcase name="wrongContainerFails" classname="org.streamdock.app.PipeTrackSelectorTest" time="0.001"/>
+  <testcase name="highestUnderCapSelected" classname="org.streamdock.app.PipeTrackSelectorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

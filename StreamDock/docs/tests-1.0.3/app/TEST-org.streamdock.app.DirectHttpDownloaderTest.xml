@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.streamdock.app.DirectHttpDownloaderTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2026-10-10T07:04:30" hostname="e2b.local" time="1.688">
+  <properties/>
+  <testcase name="rangesAreJoinedExactly" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.629"/>
+  <testcase name="changedResourceSizeRejected" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.084"/>
+  <testcase name="cancellationBetweenReadsDiscardsPartial" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.091"/>
+  <testcase name="ignoredContinuationCannotCorruptOutput" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.196"/>
+  <testcase name="cancellationStopsBeforeNetwork" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.017"/>
+  <testcase name="ignoredInitialRangeIsCompleteSingleResponse" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.085"/>
+  <testcase name="rateLimitIsNotRetried" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.12"/>
+  <testcase name="htmlIsNotSavedAsVideo" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.136"/>
+  <testcase name="forbiddenIsNotRetriedAndPartialFileRemoved" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.108"/>
+  <testcase name="shortRangeBodyRejected" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.107"/>
+  <testcase name="missingRangeRejected" classname="org.streamdock.app.DirectHttpDownloaderTest" time="0.111"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

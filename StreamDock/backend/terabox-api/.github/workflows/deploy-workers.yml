@@ -1,0 +1,22 @@
+# StreamDock addition (not part of upstream terabox-api): deploy the Worker from GitHub Actions,
+# so no local Node.js tooling is needed. Required repository secrets:
+#   CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, TERABOX_COOKIE
+name: Deploy resolver
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: npm install
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          secrets: |
+            TERABOX_COOKIE
+        env:
+          TERABOX_COOKIE: ${{ secrets.TERABOX_COOKIE }}

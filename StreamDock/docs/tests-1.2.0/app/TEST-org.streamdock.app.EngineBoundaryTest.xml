@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.streamdock.app.EngineBoundaryTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-10T13:21:53" hostname="e2b.local" time="0.036">
+  <properties/>
+  <testcase name="successfulResultIsUnchanged" classname="org.streamdock.app.EngineBoundaryTest" time="0.001"/>
+  <testcase name="cancellationIsNotSwallowed" classname="org.streamdock.app.EngineBoundaryTest" time="0.002"/>
+  <testcase name="staticInitializerFailureIsConverted" classname="org.streamdock.app.EngineBoundaryTest" time="0.009"/>
+  <testcase name="normalExceptionsAreNotDisguised" classname="org.streamdock.app.EngineBoundaryTest" time="0.001"/>
+  <testcase name="nativeLinkFailureIsConverted" classname="org.streamdock.app.EngineBoundaryTest" time="0.001"/>
+  <testcase name="diagnosticUrlsAreRedacted" classname="org.streamdock.app.EngineBoundaryTest" time="0.002"/>
+  <testcase name="sensitiveHeadersAreRedacted" classname="org.streamdock.app.EngineBoundaryTest" time="0.006"/>
+  <testcase name="outOfMemoryIsNotSwallowed" classname="org.streamdock.app.EngineBoundaryTest" time="0.001"/>
+  <testcase name="missingClassIsConverted" classname="org.streamdock.app.EngineBoundaryTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

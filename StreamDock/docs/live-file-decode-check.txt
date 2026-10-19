@@ -1,0 +1,46 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/user/StreamDock/app/build/live-probe/media.mp4':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: isommp42
+    creation_time   : 2026-10-08T22:30:26.000000Z
+    encoder         : Google
+  Duration: 00:22:50.16, start: 0.000000, bitrate: 365 kb/s
+  Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 640x360 [SAR 1:1 DAR 16:9], 315 kb/s, 24 fps, 24 tbr, 12288 tbn (default)
+      Metadata:
+        creation_time   : 2026-10-08T22:30:26.000000Z
+        handler_name    : ISO Media file produced by Google Inc. Created on: 10/08/2026.
+        vendor_id       : [0][0][0][0]
+  Stream #0:1[0x2](eng): Audio: aac (HE-AAC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 48 kb/s (default)
+      Metadata:
+        creation_time   : 2026-10-08T22:30:26.000000Z
+        handler_name    : ISO Media file produced by Google Inc. Created on: 10/08/2026.
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))
+  Stream #0:1 -> #0:1 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+[h264 @ 0x2fe81240] Late SEI is not implemented. Update your FFmpeg version to the newest one from Git. If the problem still occurs, it means that your file has a feature which has not been implemented.
+[h264 @ 0x2fe81240] If you want to help, upload a sample of this file to https://streams.videolan.org/upload/ and contact the ffmpeg-devel mailing list. (ffmpeg-devel@ffmpeg.org)
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: isommp42
+    encoder         : Lavf61.1.100
+  Stream #0:0(und): Video: wrapped_avframe, yuv420p(tv, bt709, progressive), 640x360 [SAR 1:1 DAR 16:9], q=2-31, 200 kb/s, 24 fps, 24 tbn (default)
+      Metadata:
+        creation_time   : 2026-10-08T22:30:26.000000Z
+        handler_name    : ISO Media file produced by Google Inc. Created on: 10/08/2026.
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.3.100 wrapped_avframe
+  Stream #0:1(eng): Audio: pcm_s16le, 44100 Hz, stereo, s16, 1411 kb/s (default)
+      Metadata:
+        creation_time   : 2026-10-08T22:30:26.000000Z
+        handler_name    : ISO Media file produced by Google Inc. Created on: 10/08/2026.
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.3.100 pcm_s16le
+[out#0/null @ 0x2fdad940] video:52KiB audio:861KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=  120 fps=0.0 q=-0.0 Lsize=N/A time=00:00:05.00 bitrate=N/A speed=59.7x    
+
+Exit code: 0
