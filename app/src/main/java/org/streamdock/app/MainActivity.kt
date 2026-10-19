@@ -115,9 +115,6 @@ class MainActivity : AppCompatActivity() {
     override fun attachBaseContext(newBase: android.content.Context) { super.attachBaseContext(FontFit.context(newBase)) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (androidx.appcompat.app.AppCompatDelegate.getApplicationLocales().toLanguageTags() != "en")
-            androidx.appcompat.app.AppCompatDelegate.setApplicationLocales(androidx.core.os.LocaleListCompat.forLanguageTags("en"))
-        androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode(androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO)
         applyGlassChrome()
         buildUi()
         val incoming = intent.getStringExtra("browserMediaUrl") ?: intent.getStringExtra(Intent.EXTRA_TEXT).orEmpty()

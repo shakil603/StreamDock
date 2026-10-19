@@ -7,6 +7,7 @@ They do not emulate playback, notifications or browsing on a device.
 from pathlib import Path
 import re
 import sys
+import xml.etree.ElementTree as ET
 import zipfile
 
 root = Path(__file__).resolve().parents[1]
@@ -39,6 +40,14 @@ manifest = (root / 'app/src/main/AndroidManifest.xml').read_text()
 assert 'android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK' in manifest
 assert 'android:name=".player.PlaybackService"' in manifest
 assert 'android:foregroundServiceType="mediaPlayback"' in manifest
+manifest_root = ET.parse(root / 'app/src/main/AndroidManifest.xml').getroot()
+android_attr = '{http://schemas.android.com/apk/res/android}'
+playback_service = next((node for node in manifest_root.findall('.//service')
+                         if node.get(android_attr + 'name') == '.player.PlaybackService'), None)
+assert playback_service is not None, 'playback service missing from manifest'
+assert playback_service.get(android_attr + 'exported') == 'true', 'MediaSessionService must be discoverable by Media3/system controllers'
+service_actions = {node.get(android_attr + 'name') for node in playback_service.findall('.//intent-filter/action')}
+assert 'androidx.media3.session.MediaSessionService' in service_actions, 'Media3 SessionToken cannot resolve PlaybackService without its service action'
 assert 'android:name=".player.PlayerActivity"' in manifest
 
 # Playback must live in the service: no private ExoPlayer left in the screens.

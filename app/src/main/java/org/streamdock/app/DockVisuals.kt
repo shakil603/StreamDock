@@ -21,7 +21,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewOutlineProvider
 import android.widget.ProgressBar
-import android.widget.TextView
+import androidx.appcompat.widget.AppCompatTextView
 import java.util.Random
 
 /**
@@ -270,7 +270,7 @@ class AuroraBackdrop(private val density: Float) : Drawable() {
 }
 
 /** Chrome wordmark: a polished metal sweep across the letters, the way the dock plate is engraved. */
-class ChromeText(context: Context, label: String, size: Float, tracking: Float = 0.015f) : TextView(context) {
+class ChromeText(context: Context, label: String, size: Float, tracking: Float = 0.015f) : AppCompatTextView(context) {
     init {
         text = label
         textSize = size
