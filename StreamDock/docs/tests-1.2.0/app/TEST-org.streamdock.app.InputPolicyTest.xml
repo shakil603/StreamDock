@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.streamdock.app.InputPolicyTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-10T13:21:53" hostname="e2b.local" time="0.007">
+  <properties/>
+  <testcase name="rejectsCredentials" classname="org.streamdock.app.InputPolicyTest" time="0.001"/>
+  <testcase name="rejectsLocalFiles" classname="org.streamdock.app.InputPolicyTest" time="0.0"/>
+  <testcase name="rejectsPlainHttp" classname="org.streamdock.app.InputPolicyTest" time="0.0"/>
+  <testcase name="acceptsHttps" classname="org.streamdock.app.InputPolicyTest" time="0.0"/>
+  <testcase name="audioHasNoHeightLimit" classname="org.streamdock.app.InputPolicyTest" time="0.003"/>
+  <testcase name="bestHasNoHeightLimit" classname="org.streamdock.app.InputPolicyTest" time="0.002"/>
+  <testcase name="mp4KeepsContainerAndCap" classname="org.streamdock.app.InputPolicyTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,47 @@
+{
+  "baseline": "delivered 1.0.4 source",
+  "files": {
+    "NativeRuntime.kt": {
+      "only_english_message_changes": true,
+      "byte_identical": false,
+      "sha256": "7f519ee81c46c3ffb00b0cf1571d2956fc62c427e17255efb889ec3f7c83973c"
+    },
+    "NewPipeTransfer.kt": {
+      "only_english_message_changes": true,
+      "byte_identical": false,
+      "sha256": "38b8de20c744d621900f8c782cbd74ee140faab5eaee96605984f0f55f48c574"
+    },
+    "DirectHttpDownloader.kt": {
+      "only_english_message_changes": true,
+      "byte_identical": false,
+      "sha256": "afc89635d21b064e55dc0aca3876233314d19607f5835fb0c166eda51aa9e9a0"
+    },
+    "PipeDownloadPlan.kt": {
+      "only_english_message_changes": true,
+      "byte_identical": false,
+      "sha256": "ffc8f2b3777163904a995fe8b18f7f42ad440ea0327d66bd246ee7ec169101cd"
+    },
+    "Models.kt": {
+      "only_english_message_changes": true,
+      "byte_identical": false,
+      "sha256": "964c75401add823570fdcae162b6fe27c352a76bea4b50a0eb8cb93499fb7d8b"
+    },
+    "ExtractorRepository.kt": {
+      "only_english_message_changes": true,
+      "byte_identical": false,
+      "sha256": "23c0b2318e2a1581c10589fba2c846bd390e84b0c10f25d00f5418a6a7b8dafa"
+    },
+    "NativeMediaProcessor.kt": {
+      "only_english_message_changes": true,
+      "byte_identical": true,
+      "sha256": "82fc730aec8b11d830abac495a57e2029c43954759de480703dd4d7fde8faaf2"
+    },
+    "PipeDownloader.kt": {
+      "only_english_message_changes": true,
+      "byte_identical": true,
+      "sha256": "5d21cbcaec79217e7489fe36c4509755786737739451d2ce98e62dcdf9fcbd57"
+    }
+  },
+  "TransferWorker": "Only English message changes and explicit rejection of retired teraJob input",
+  "entire_newpipe_module_byte_identical": true
+}

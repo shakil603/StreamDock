@@ -1,0 +1,39 @@
+--- a/src/main/java/org/schabi/newpipe/extractor/utils/Utils.java
++++ b/src/main/java/org/schabi/newpipe/extractor/utils/Utils.java
+@@ -2,6 +2,7 @@
+ 
+ import org.schabi.newpipe.extractor.exceptions.ParsingException;
+ 
++import java.io.UnsupportedEncodingException;
+ import java.net.MalformedURLException;
+ import java.net.URL;
+ import java.net.URLDecoder;
+@@ -34,7 +35,13 @@
+      * @return The encoded URL.
+      */
+     public static String encodeUrlUtf8(final String string) {
+-        return URLEncoder.encode(string, StandardCharsets.UTF_8);
++        // StreamDock compatibility patch: Charset overload is absent on Android 9.
++        try {
++            return URLEncoder.encode(string, StandardCharsets.UTF_8.name());
++        } catch (final UnsupportedEncodingException impossible) {
++            // UTF-8 is required on every supported Java/Android runtime.
++            throw new IllegalStateException("UTF-8 is unavailable", impossible);
++        }
+     }
+ 
+     /**
+@@ -43,7 +50,12 @@
+      * @return The decoded URL.
+      */
+     public static String decodeUrlUtf8(final String url) {
+-        return URLDecoder.decode(url, StandardCharsets.UTF_8);
++        // StreamDock compatibility patch: use the old, supported String overload.
++        try {
++            return URLDecoder.decode(url, StandardCharsets.UTF_8.name());
++        } catch (final UnsupportedEncodingException impossible) {
++            throw new IllegalStateException("UTF-8 is unavailable", impossible);
++        }
+     }
+ 
+     /**

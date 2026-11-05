@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.streamdock.app.NewPipeLiveProbeTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2026-10-10T08:03:20" hostname="e2b.local" time="0.001">
+  <properties/>
+  <testcase name="extractAndFetchStreamPrefix" classname="org.streamdock.app.NewPipeLiveProbeTest" time="0.001">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

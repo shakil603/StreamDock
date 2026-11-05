@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.streamdock.app.terabox.TeraPolicyTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2026-10-10T10:56:38" hostname="e2b.local" time="0.026">
+  <properties/>
+  <testcase name="httpShareRejected" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.0"/>
+  <testcase name="cleartextDownloadRejected" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.001"/>
+  <testcase name="diagnosticRedactsMultipleSecretsOnSameLine" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.0"/>
+  <testcase name="httpOnlyAndHostOnlyScopePreserved" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.0"/>
+  <testcase name="encryptedEnvelopeRoundTripAndNoPlaintext" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.001"/>
+  <testcase name="idNeverPassesThroughDouble" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.001"/>
+  <testcase name="impostorDomainIsNotTerabox" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.0"/>
+  <testcase name="tamperingAndCrossPurposeSwapRejected" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.001"/>
+  <testcase name="rc4SignatureKnownVector" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.0"/>
+  <testcase name="ownCookieDomainOnlyAndExpiredRemoved" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.001"/>
+  <testcase name="credentialsNotSentToCdnOrPlaintext" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.001"/>
+  <testcase name="aliasesNormalizeWithoutContactingAlias" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.001"/>
+  <testcase name="traversalTokenRejected" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.001"/>
+  <testcase name="invalidCookieErrorDoesNotEchoSecret" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.0"/>
+  <testcase name="jobCodecPreservesShareCodeAndOutputWithoutWorkData" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.002"/>
+  <testcase name="injectedIdRejected" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.001"/>
+  <testcase name="credentialsInShareUrlRejected" classname="org.streamdock.app.terabox.TeraPolicyTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

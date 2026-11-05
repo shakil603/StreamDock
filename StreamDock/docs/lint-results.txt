@@ -1,0 +1,178 @@
+/home/user/StreamDock/app/build.gradle:42: Warning: A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.19.1 [GradleDependency]
+    implementation 'androidx.core:core-ktx:1.15.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/build.gradle:43: Warning: A newer version of androidx.appcompat:appcompat than 1.7.0 is available: 1.8.0 [GradleDependency]
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/build.gradle:44: Warning: A newer version of com.google.android.material:material than 1.12.0 is available: 1.14.0 [GradleDependency]
+    implementation 'com.google.android.material:material:1.12.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/build.gradle:45: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.7 is available: 2.11.0 [GradleDependency]
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.7'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/build.gradle:46: Warning: A newer version of androidx.work:work-runtime-ktx than 2.10.1 is available: 2.12.0 [GradleDependency]
+    implementation 'androidx.work:work-runtime-ktx:2.10.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/build.gradle:47: Warning: A newer version of androidx.media3:media3-exoplayer than 1.6.1 is available: 1.11.1 [GradleDependency]
+    implementation 'androidx.media3:media3-exoplayer:1.6.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/build.gradle:48: Warning: A newer version of androidx.media3:media3-exoplayer-hls than 1.6.1 is available: 1.11.1 [GradleDependency]
+    implementation 'androidx.media3:media3-exoplayer-hls:1.6.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/build.gradle:49: Warning: A newer version of androidx.media3:media3-exoplayer-dash than 1.6.1 is available: 1.11.1 [GradleDependency]
+    implementation 'androidx.media3:media3-exoplayer-dash:1.6.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/build.gradle:50: Warning: A newer version of androidx.media3:media3-ui than 1.6.1 is available: 1.11.1 [GradleDependency]
+    implementation 'androidx.media3:media3-ui:1.6.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/home/user/StreamDock/app/src/main/AndroidManifest.xml:7: Warning: The attribute android:allowBackup is deprecated from Android 12 and higher and may be removed in future versions. Consider adding the attribute android:dataExtractionRules specifying an @xml resource which configures cloud backups and device transfers on Android 12 and higher. [DataExtractionRules]
+    <application android:name=".DockApp" android:theme="@style/Theme.StreamDock" android:label="StreamDock" android:icon="@drawable/ic_dock" android:allowBackup="false" android:usesCleartextTraffic="false" android:supportsRtl="true" android:extractNativeLibs="true">
+                                                                                                                                                                  ~~~~~
+
+   Explanation for issues of type "DataExtractionRules":
+   Before Android 12, the attributes android:allowBackup and
+   android:fullBackupContent were used to configure all forms of backup,
+   including cloud backups, device-to-device transfers and adb backup.
+
+   In Android 12 and higher, these attributes have been deprecated and will
+   only apply to cloud backups. You should instead use the attribute
+   android:dataExtractionRules, specifying an @xml resource that configures
+   which files to back up, for cloud backups and for device-to-device
+   transfers, separately. If your minSdkVersion supports older versions,
+   you'll still want to specify an android:fullBackupContent resource if the
+   default behavior is not right for your app.
+
+   https://developer.android.com/about/versions/12/backup-restore#xml-changes
+   https://goo.gle/DataExtractionRules
+
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:83: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+            getPreferences(MODE_PRIVATE).edit().putString("work", request.id.toString()).apply()
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/TransferWorker.kt:56: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+                convertLocal(Uri.parse(local), folder, kind)
+                             ~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/TransferWorker.kt:62: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+            val destination = Uri.parse(inputData.getString("destination") ?: error("Missing destination"))
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseKtx":
+   The Android KTX libraries decorates the Android platform SDK as well as
+   various libraries with more convenient extension functions available from
+   Kotlin, allowing you to use default parameters, named parameters, and
+   more.
+
+   Available options:
+
+   **remove-defaults** (default is true):
+   Whether to skip arguments that match the defaults provided by the extension.
+
+   Extensions often provide default values for some of the parameters. For example:
+   ```kotlin
+   fun Path.readLines(charset: Charset = Charsets.UTF_8): List<String> { return Files.readAllLines(this, charset) }
+   ```
+   This lint check will by default automatically omit parameters that match the default, so if your code was calling ```kotlin
+   Files.readAllLines(file, Charset.UTF_8)
+   ```
+   lint would replace this with
+   ```kotlin
+   file.readLines()
+   ```
+   rather than
+   ```kotlin
+   file.readLines(Charset.UTF_8
+   ```
+   You can turn this behavior off using this option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="remove-defaults" value="true" />
+       </issue>
+   </lint>
+   ```
+
+   **require-present** (default is true):
+   Whether to only offer extensions already available.
+
+   This option lets you only have lint suggest extension replacements if those extensions are already available on the class path (in other words, you're already depending on the library containing the extension method.)
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="require-present" value="true" />
+       </issue>
+   </lint>
+   ```
+
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:70: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            localLabel.text = "ভিডিও নির্বাচিত ✓  ·  নিচে MP3 বা M4A বেছে নিন"
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:181: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            } ?: run { transferStatus.text = "প্রথমে একটি download বা conversion সম্পূর্ণ করুন।" }
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:207: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+        status.text = "বিশ্লেষণ ব্যর্থ: ${error.javaClass.simpleName}\n${DiagnosticText.redact(error.message.orEmpty()).take(500)}\nনিচের ‘সমস্যার রিপোর্ট’ বাটন থেকে রিপোর্ট কপি করুন।"
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:221: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                meta.text = "${info.author}  ·  ${info.duration / 60}:${(info.duration % 60).toString().padStart(2, '0')}  ·  ${info.engine}"
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:221: Warning: Number formatting does not take into account locale settings. Consider using String.format instead. [SetTextI18n]
+                meta.text = "${info.author}  ·  ${info.duration / 60}:${(info.duration % 60).toString().padStart(2, '0')}  ·  ${info.engine}"
+                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:244: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                    status.text = "Preview ব্যর্থ: ${error.errorCodeName}। অন্য stream বেছে নিন বা লিংক আবার বিশ্লেষণ করুন।"
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:244: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                    status.text = "Preview ব্যর্থ: ${error.errorCodeName}। অন্য stream বেছে নিন বা লিংক আবার বিশ্লেষণ করুন।"
+                                   ~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:244: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                    status.text = "Preview ব্যর্থ: ${error.errorCodeName}। অন্য stream বেছে নিন বা লিংক আবার বিশ্লেষণ করুন।"
+                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:252: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        if (updating) { transferStatus.text = "Engine update শেষ হতে দিন।"; return }
+                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:255: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        if (local && kind !in listOf(OutputKind.MP3, OutputKind.M4A)) { localLabel.text = "উপরে Audio · MP3 বা Audio · M4A নির্বাচন করুন।"; return }
+                                                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:293: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            if (active) { status.text = "Transfer শেষ হওয়ার পরে update করুন।"; return@launch }
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:294: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            updating = true; analyze.isEnabled = false; directAnalyze.isEnabled = false; status.text = "yt-dlp engine আপডেট হচ্ছে…"
+                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:305: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                status.text = "Engine update: $result"
+                              ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:305: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                status.text = "Engine update: $result"
+                               ~~~~~~~~~~~~~~~
+/home/user/StreamDock/app/src/main/java/org/streamdock/app/MainActivity.kt:307: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            } catch (e: Exception) { Diagnostics.error("Engine update failed", e); status.text = "আপডেট ব্যর্থ: ${e.message?.take(500)}"
+                                                                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+0 errors, 28 warnings

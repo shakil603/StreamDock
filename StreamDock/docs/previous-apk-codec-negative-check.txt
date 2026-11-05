@@ -1,0 +1,11 @@
+Ljava/net/URLDecoder; decode (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+Ljava/net/URLDecoder; decode (Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;
+Ljava/net/URLEncoder; encode (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+Ljava/net/URLEncoder; encode (Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;
+Traceback (most recent call last):
+  File "/home/user/StreamDock/tools/verify_url_codec_dex.py", line 76, in <module>
+    inspect(Path(sys.argv[1]))
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/user/StreamDock/tools/verify_url_codec_dex.py", line 65, in inspect
+    raise AssertionError("Unsupported Android-9 Charset overload remains in APK: " + repr(bad))
+AssertionError: Unsupported Android-9 Charset overload remains in APK: [('Ljava/net/URLDecoder;', 'decode', '(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;'), ('Ljava/net/URLEncoder;', 'encode', '(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;')]

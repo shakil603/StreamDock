@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.streamdock.app.BrowserPolicyTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2026-10-10T13:21:51" hostname="e2b.local" time="0.066">
+  <properties/>
+  <testcase name="googleSearchIsEncoded" classname="org.streamdock.app.BrowserPolicyTest" time="0.039"/>
+  <testcase name="navigationCannotDowngradeHttps" classname="org.streamdock.app.BrowserPolicyTest" time="0.002"/>
+  <testcase name="normalAddressDoesNotBecomeSearch" classname="org.streamdock.app.BrowserPolicyTest" time="0.002"/>
+  <testcase name="malformedUrlRejectedWithoutEcho" classname="org.streamdock.app.BrowserPolicyTest" time="0.001"/>
+  <testcase name="selectedProviderIsUsed" classname="org.streamdock.app.BrowserPolicyTest" time="0.001"/>
+  <testcase name="helperDomainsAreExactOrSubdomains" classname="org.streamdock.app.BrowserPolicyTest" time="0.0"/>
+  <testcase name="unsafeSchemesRejected" classname="org.streamdock.app.BrowserPolicyTest" time="0.005"/>
+  <testcase name="emptyFilenameHasFallback" classname="org.streamdock.app.BrowserPolicyTest" time="0.002"/>
+  <testcase name="teraLinksStayOutOfNativeEngines" classname="org.streamdock.app.BrowserPolicyTest" time="0.005"/>
+  <testcase name="userinfoIsRejected" classname="org.streamdock.app.BrowserPolicyTest" time="0.001"/>
+  <testcase name="explicitHttpIsUpgradedNotLoadedInCleartext" classname="org.streamdock.app.BrowserPolicyTest" time="0.0"/>
+  <testcase name="longUnicodeFilenameRetainsExtensionAndFitsFilesystem" classname="org.streamdock.app.BrowserPolicyTest" time="0.004"/>
+  <testcase name="filenameCannotEscapeDownloadsDirectory" classname="org.streamdock.app.BrowserPolicyTest" time="0.0"/>
+  <testcase name="emptyInputRejected" classname="org.streamdock.app.BrowserPolicyTest" time="0.001"/>
+  <testcase name="refererContainsNoSecretPathOrQuery" classname="org.streamdock.app.BrowserPolicyTest" time="0.0"/>
+  <testcase name="httpsIsKeptAndSchemeNormalized" classname="org.streamdock.app.BrowserPolicyTest" time="0.001"/>
+  <testcase name="userFilenameKeepsUnicodeCombiningMarks" classname="org.streamdock.app.BrowserPolicyTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

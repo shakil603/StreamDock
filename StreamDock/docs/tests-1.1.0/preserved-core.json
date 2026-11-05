@@ -1,0 +1,13 @@
+{
+  "compared_to": "delivered 1.0.4 source archive",
+  "unchanged_core_sha256": {
+    "NativeRuntime.kt": "1e414f0082e066d60faefe7334120d122f4b648a99064f644d64758ace6af14b",
+    "DockApp.kt": "04b6707d83051bfe7644172d05c928b5d21e3d532b566fa2a7be20664d1cd979",
+    "NewPipeTransfer.kt": "b7fa06ee3537bd9693891142bce42daeca0c32e9fc86ef2dc48719d4d167f540",
+    "NativeMediaProcessor.kt": "82fc730aec8b11d830abac495a57e2029c43954759de480703dd4d7fde8faaf2",
+    "DirectHttpDownloader.kt": "abd57f9a0146f731a1414d793e229e64c4007b4581e0d232a4902a70f8f7c2c7",
+    "ExtractorRepository.kt": "234ad2a1dad9193e6ce31688daddc4ad77bbc0e6443a64fa8629c530a34d8db7",
+    "Models.kt": "86f863ec7e324bfa0753fd51b472ea3431c994c71428826708755eb78fa1d6c8"
+  },
+  "entire_newpipe_module_unchanged": true
+}

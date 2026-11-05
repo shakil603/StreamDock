@@ -1,0 +1,10 @@
+arm64-v8a: 74 ELF files inspected
+  libc++_shared.so: MISSING
+  Missing non-system dependencies: libandroid-posix-semaphore.so, libandroid-support.so, libc++_shared.so, libcrypto.so.3, libexpat.so.1
+Traceback (most recent call last):
+  File "/home/user/StreamDock/tools/verify_ffmpeg_runtime.py", line 151, in <module>
+    audit(args.apk, args.without_shared_runtime)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/StreamDock/tools/verify_ffmpeg_runtime.py", line 142, in audit
+    raise AssertionError("Missing runtime dependencies: " + ", ".join(failures))
+AssertionError: Missing runtime dependencies: arm64-v8a/libandroid-posix-semaphore.so, arm64-v8a/libandroid-support.so, arm64-v8a/libc++_shared.so, arm64-v8a/libcrypto.so.3, arm64-v8a/libexpat.so.1

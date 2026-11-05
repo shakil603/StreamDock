@@ -1,0 +1,16 @@
+{
+  "OpenList": {
+    "revision": "482464c2affc5eeba5d4a25bb272aeb352ec5918",
+    "source": "https://github.com/OpenListTeam/OpenList/tree/482464c2affc5eeba5d4a25bb272aeb352ec5918/drivers/terabox",
+    "license": "AGPL-3.0",
+    "adapted": "Official read-only account flow and signing; excludes crack/write operations and vip override",
+    "reference_sha256": {
+      "driver.go": "95c95a380a13ad423869e01bf8b381c1cdd726167cadede218205932474608bf",
+      "meta.go": "715790fcf17bc8add7766774b4ad0d06fe6cb21ffa58f2dd94a95a7a27eb6e63",
+      "types.go": "b7c59d3e0ba6115d2652cee817ff1b4267ea6eb8a463b14043eb0149ff302fe5",
+      "util.go": "70c938d67f96cc080ee795f71e22586f359dcbec31a09b6e9a66cb2015376858"
+    }
+  },
+  "share_reference": "https://github.com/RrY3999/TeraBox",
+  "retrieved": "2026-10-10"
+}
