@@ -1,0 +1,46 @@
+name: Auto Unzip Project Files
+
+on:
+  push:
+    paths:
+      - '**.zip' # শুধুমাত্র জিপ ফাইল পুশ বা আপডেট হলে এই ওয়ার্কফ্লো চলবে
+
+jobs:
+  unzip-job:
+    runs-on: ubuntu-latest
+    
+    # ফাইল এক্সট্রাক্ট করে পুশ করার জন্য রাইট পারমিশন
+    permissions:
+      contents: write
+
+    steps:
+      # ১. রিপোজিটরি ক্লোন বা চেকআউট করা
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # ২. জিপ ফাইল আনজিপ করা এবং অরিজিনাল জিপ ফাইলটি মুছে ফেলা
+      - name: Unzip Project Files
+        run: |
+          # রিপোজিটরির সব .zip ফাইল খুঁজে আনজিপ করে রুট ডিরেক্টরিতে রাখা হবে
+          for file in *.zip; do
+            if [ -f "$file" ]; then
+              echo "Unzipping $file..."
+              unzip -o "$file" -d ./
+              rm "$file" # আনজিপ করার পর জিপ ফাইল ডিলিট করে দেওয়া হবে
+            fi
+          done
+
+      # ৩. পরিবর্তনগুলো সনাক্ত করে অটোমেটিক গিটে কমিট ও পুশ করা
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add .
+          # যদি কোনো নতুন ফাইল আনজিপ হয়ে থাকে তবেই কমিট করবে
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-unzipped project files and removed zip"
+            git push
+          fi
